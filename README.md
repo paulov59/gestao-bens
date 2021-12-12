@@ -31,7 +31,7 @@ localhost:8000/admin
 Acesse a documentação dos endpoints:
 ```
 localhost:8000/swagger
-ou confira o (arquivo)(documentação/teste-api-desafio-lccv).
+ou confira o [arquivo](documentação/teste-api-desafio-lccv).
 ````
 
 ## Conclusão do projeto
