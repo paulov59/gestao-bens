@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  banco-desafio:
+    image: postgres:12.6
+    container_name: banco-desafio
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: desafio-db
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: pass1234
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - ./.data/postgres:/var/lib/postgresql/data
+      - /tmp:/tmp
+
+    networks:
+          - sume-network
+
+  django-aula:
+        container_name: django-aula
+        restart: unless-stopped
+        environment:
+          DJANGO_SETTINGS_MODULE: 'desafio.settings'
+        build: 
+          context: backend
+          dockerfile: ../Dockerfile
+    
+        command:  bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+        volumes:
+          - ./backend:/code
+        ports:
+          - "8000:8000"
+        depends_on:
+          - banco-desafio
+        networks:
+          - sume-network
+
+networks:
+  sume-network:
+    driver: bridge
