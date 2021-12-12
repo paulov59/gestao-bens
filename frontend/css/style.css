@@ -1,0 +1,38 @@
+#logo {
+    width: 50px;
+}
+
+#sidebar {
+    width: 230px;
+    padding: 10px;
+    background-color: #142749;
+    height: 100vh;
+}
+
+.sidebar-heading {
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    color: #fff;
+    font-size: .8rem;
+}
+
+.card-title {
+    margin: 0;
+}
+
+.nav-link-text {
+    color: #222;
+    font-weight: 600;
+}
+
+/* Sobrescrita do Bootstrap */
+
+.breadcrumb {
+    padding: 0.5rem 1rem;
+    background-color: var(--bs-light);
+}
+
+.nav-link:hover {
+    color: #777;
+}

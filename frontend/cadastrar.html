@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Cadastrar</title>
+</head>
+
+<body>
+    <!-- NavBar -->
+    <nav id="navbar" class="py-2 bg-light">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="d-flex flex-row align-items-center">
+                        <img id="logo" src="assets/logo.png" alt="logo">
+                        <span class="text-uppercase lead px-1 border-end">
+                            Logo
+                        </span>
+                        <span class="text-bold px-1">
+                            Portal Teste
+                        </span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="d-flex flex-row-reverse bd-highlight">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-text" href="#">
+                                    <i class="bi bi-gear"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-text" href="#">
+                                    Sair <i class="bi bi-box-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- /Navbar -->
+
+    <!-- Page Wrapper -->
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <ul class="nav flex-column" id="sidebar">
+            <div class="sidebar-heading">
+                Patrimônio
+            </div>
+            <li class="nav-item">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Bens
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="list-group">
+                                <a href="cadastrar.html" class="list-group-item list-group-item-action active"
+                                    aria-current="true">
+                                    Cadastrar
+                                </a>
+                                <a href="listar.html" class="list-group-item list-group-item-action"
+                                    aria-current="true">
+                                    Listar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+        <!-- /Sidebar -->
+
+        <!-- Page content -->
+        <div class="d-flex flex-column flex-fill">
+            <div class="container-fluid mt-1">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Portal do Administrador</a></li>
+                        <li class="breadcrumb-item"><a href="index.html">Patrimônio</a></li>
+                        <li class="breadcrumb-item"><a href="index.html">Bens</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Cadastrar</li>
+                    </ol>
+                </nav>
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Cadastrar bem</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="geral-tab" data-bs-toggle="tab"
+                                    data-bs-target="#geral" type="button" role="tab" aria-controls="geral"
+                                    aria-selected="true">Geral</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="bens-tab" data-bs-toggle="tab" data-bs-target="#bens"
+                                    type="button" role="tab" aria-controls="bens" aria-selected="true">Bens</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="obs-tab" data-bs-toggle="tab" data-bs-target="#obs"
+                                    type="button" role="tab" aria-controls="obs"
+                                    aria-selected="true">Observações</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content mt-2" id="myTabContent">
+                            <!-- Geral -->
+                            <div class="tab-pane fade show active" id="geral" role="tabpanel"
+                                aria-labelledby="geral-tab">
+                                <form>
+                                    <div class="row g-3">
+                                        <div class="col">
+                                            <label for="numero" class="form-label">Número (AAAAXXXXXX)</label>
+                                            <input type="text" class="form-control" id="numero" placeholder="" disabled>
+                                        </div>
+                                        <div class="col">
+                                            <label for="fornecedor" class="form-label">Fornecedor (razão social)</label>
+                                            <select id="fornecedor" class="form-control">
+                                                <option>Selecione um fornecedor</option>
+                                                <option>Fornecedor 1</option>
+                                                <option>Fornecedor 2</option>
+                                                <option>Fornecedor 3</option>
+                                                <option>Fornecedor 4</option>
+                                                <option>Fornecedor 5</option>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <label for="nota" class="form-label">Nota fiscal</label>
+                                            <select id="fornecedor" class="form-control">
+                                                <option>Selecione uma nota</option>
+                                                <option>Nota 1</option>
+                                                <option>Nota 2</option>
+                                                <option>Nota 3</option>
+                                                <option>Nota 4</option>
+                                                <option>Nota 5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row g-3">
+                                        <div class="col">
+                                            <label for="item_nota" class="form-label">Item nota fiscal</label>
+                                            <select id="fornecedor" class="form-control">
+                                                <option>Selecione o item</option>
+                                                <option>Item 1</option>
+                                                <option>Item 2</option>
+                                                <option>Item 3</option>
+                                                <option>Item 4</option>
+                                                <option>Item 5</option>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <label for="quantidade_vinculada" class="form-label">Quantidade
+                                                vinculada</label>
+                                            <input type="text" class="form-control" id="quantidade_vinculada" disabled>
+                                        </div>
+                                        <div class="col">
+                                            <label for="quantidade_disponivel" class="form-label">Quantidade
+                                                disponível</label>
+                                            <input type="number" readonly class="form-control"
+                                                id="quantidade_disponivel" disabled>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="card-footer mt-3">
+                                    <div class="d-flex justify-content-end">
+                                        <div class="btn-group gap-1" role="group" aria-label="Basic example">
+                                            <button type="button" class="btn btn-secondary">Voltar</button>
+                                            <button type="button" class="btn btn-primary">Enviar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Geral -->
+
+                            <!-- Bens -->
+                            <div class="tab-pane fade" id="bens" role="tabpanel" aria-labelledby="bens-tab">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="d-flex justify-content-between">
+                                            <div class="d-flex align-items-center">
+                                                <h6 class="card-title">Bens</h6>
+                                            </div>
+                                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                                data-bs-target="#cadastrarBemModal">
+                                                <i class="bi bi-plus-lg"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Tombamento</th>
+                                                    <th scope="col">Produto</th>
+                                                    <th scope="col">Valor</th>
+                                                    <th scope="col">Itens</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>2021125786</td>
+                                                    <td>Produto 1</td>
+                                                    <td>10,00</td>
+                                                    <td>
+                                                        <!-- Button trigger modal -->
+                                                        <button type="button" class="btn btn-primary btn-sm"
+                                                            data-bs-toggle="modal" data-bs-target="#visualizarBemModal">
+                                                            <i class="bi bi-search"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th scope="row">Total</th>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>10,00</td>
+                                                    <td></td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Bens -->
+
+                            <!-- Observações -->
+                            <div class="tab-pane fade" id="obs" role="tabpanel" aria-labelledby="obs-tab">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="observacao">Observações</label>
+                                        <textarea class="form-control" id="observacao" rows="3"></textarea>
+                                    </div>
+                                </form>
+                                <div class="card-footer mt-3">
+                                    <div class="d-flex justify-content-end">
+                                        <div class="btn-group gap-1" role="group" aria-label="Basic example">
+                                            <button type="button" class="btn btn-secondary">Voltar</button>
+                                            <button type="button" class="btn btn-primary">Enviar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Observações -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Page content -->
+
+    </div>
+    <!-- /Page Wrapper -->
+
+    <!-- Modal visualizar bem -->
+    <div class="modal fade" id="visualizarBemModal" tabindex="-1" aria-labelledby="visualizarBemModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="visualizarBemModalLabel">Visualizar Bem</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <dl>
+                        <dt>Estado</dt>
+                        <dd>Bom</dd>
+
+                        <dt>Situação de uso</dt>
+                        <dd>Em uso</dd>
+
+                        <dt>Marca</dt>
+                        <dd>Marca de teste</dd>
+                    </dl>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Modal visualizar bem -->
+
+    <!-- Modal cadastrar bem -->
+    <div class="modal fade" id="cadastrarBemModal" tabindex="-1" aria-labelledby="cadastrarBemModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cadastrarBemModalLabel">Cadastro de Bem</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row g-3">
+                            <div class="col">
+                                <label for="quantidade" class="form-label">Quantidade</label>
+                                <input type="text" class="form-control" id="quantidade">
+                            </div>
+                            <div class="col">
+                                <label for="marca" class="form-label">Marca</label>
+                                <input type="text" class="form-control" id="marca">
+                            </div>
+                            <div class="col">
+                                <label for="valor" class="form-label">Valor unitário</label>
+                                <input type="text" class="form-control" id="valor" disabled>
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col">
+                                <label for="inicioGarantia" class="form-label">Início da garantia</label>
+                                <input type="date" class="form-control" id="inicioGarantia">
+                            </div>
+                            <div class="col">
+                                <label for="terminoGarantia" class="form-label">Termino da garantia</label>
+                                <input type="date" class="form-control" id="terminoGarantia">
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col">
+                                <label for="inicioGarantia" class="form-label">Início da garantia</label>
+                                <input type="date" class="form-control" id="inicioGarantia">
+                            </div>
+                            <div class="col">
+                                <label for="terminoGarantia" class="form-label">Termino da garantia</label>
+                                <input type="date" class="form-control" id="terminoGarantia">
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="form-group">
+                                <label for="observacao">Observações</label>
+                                <textarea class="form-control" id="observacao" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Adicionar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Modal cadastrar bem -->
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

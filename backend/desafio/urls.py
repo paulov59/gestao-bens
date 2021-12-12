@@ -19,6 +19,11 @@ from django.urls import path, include
 from rest_framework import routers
 from sume import views
 
+from rest_framework.schemas import get_schema_view
+from rest_framework_swagger.renderers import SwaggerUIRenderer, OpenAPIRenderer
+
+schema_view = get_schema_view(title='Backend desafio', renderer_classes=[OpenAPIRenderer, SwaggerUIRenderer])
+
 router = routers.DefaultRouter()
 router.register(r'fornecedores', views.FornecedoresView)
 router.register(r'naturezas_despesa', views.NaturezasDespesaView)
@@ -33,4 +38,5 @@ router.register(r'bens', views.BensView)
 urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
+    path('swagger/', schema_view, name="docs"),
 ]

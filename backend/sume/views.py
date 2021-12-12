@@ -51,6 +51,25 @@ class ItensNotaFiscalView(viewsets.ModelViewSet):
     filterset_fields = ['produto_servico', 'vinculado']
 
 class BensView(viewsets.ModelViewSet):
+    """
+    retrieve:
+        Return a user instance.
+
+    list:
+        Return all users, ordered by most recently joined.
+
+    create:
+        Create a new user.
+
+    delete:
+        Remove an existing user.
+
+    partial_update:
+        Update one or more fields on an existing user.
+
+    update:
+        Update a user.
+    """
     queryset = models.Bens.objects.all()
     serializer_class = serializers.BensSerializer
 
