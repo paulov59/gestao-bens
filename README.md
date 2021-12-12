@@ -32,7 +32,7 @@ Acesse a documentação dos endpoints:
 ```
 localhost:8000/swagger
 ```
-ou confira o [arquivo](documentação/teste-api-desafio-lccv) do [Insomnia](https://insomnia.rest/download).
+ou confira o [arquivo](documentação/teste-api-desafio-lccv.json) do [Insomnia](https://insomnia.rest/download).
 
 ## Conclusão do projeto
 Nesse projeto, realizei a criação das telas de frontend com as tecnologias HTML, CSS e Bootstrap. Devido ao curto tempo para implementação, não foi possível integrar as aplicações. O backend, que utiliza as tecnologias Docker, Django, Django-Rest e Postgres, está totalmente finalizado.
