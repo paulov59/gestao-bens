@@ -31,7 +31,6 @@ class DadosCadModel(models.Model):
     class Meta:
         abstract = True
 
-
 class Fornecedores(DadosCadModel):
     id_fornecedor = models.AutoField(
         primary_key=True
@@ -113,8 +112,8 @@ class SitucoesUsoBem(models.Model):
         max_length=255
     )
     
-    ativo = models.CharField(
-        max_length=1
+    ativo = models.BooleanField(
+        default=True
     )
 
     class Meta:
@@ -209,6 +208,9 @@ class NotasFiscais(DadosCadModel):
     
     def __str__(self) -> str:
         return self.id_fornecedor.razao_social + "-" + str(self.numero) +'/'+str(self.ano)
+    
+    def numeroAno(self) -> str:
+        return str(self.numero) +'/'+str(self.ano)
 
 class ItensNotaFiscal(DadosCadModel):
     id_item_nota_fiscal = models.AutoField(
@@ -249,7 +251,8 @@ class Bens(DadosCadModel):
     )
     
     id_item_nota_fiscal = models.ForeignKey(
-        ItensNotaFiscal, on_delete=models.Case
+        ItensNotaFiscal,
+        on_delete=models.Case
     )
     
     tombamento = models.CharField(
@@ -257,17 +260,20 @@ class Bens(DadosCadModel):
     )
     
     id_estado_bem = models.ForeignKey(
-        EstadosBem, on_delete=models.Case
+        EstadosBem,
+        on_delete=models.Case
     )
 
     id_situacao_uso_bem = models.ForeignKey(
-        SitucoesUsoBem, on_delete=models.Case
+        SitucoesUsoBem,
+        on_delete=models.Case
     )
     
     valor_aquisicao = models.FloatField()
     
     id_marca = models.ForeignKey(
-        Marcas, on_delete=models.Case
+        Marcas,
+        on_delete=models.Case
     )
 
     data_lim_garantia = models.DateField()
@@ -276,7 +282,10 @@ class Bens(DadosCadModel):
 
     data_inicio_uso = models.DateField()
     
-    observacoes = models.TextField()
+    observacoes = models.TextField(
+        blank=True,
+        null=True
+    )
 
 
     class Meta:
@@ -284,7 +293,7 @@ class Bens(DadosCadModel):
             'tombamento'
         ]
         db_table = 'Bens'
-        verbose_name_plural = 'Itens das notas fiscais'
+        verbose_name_plural = 'Bens'
 
     def __str__(self) -> str:
         return self.id_item_nota_fiscal.produto_servico + '/' + self.tombamento
