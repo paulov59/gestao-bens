@@ -1,9 +1,9 @@
 # Gestão de bens
 
-![GitHub repo size](https://img.shields.io/github/repo-size/paulov59/desafio-lccv?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/paulov59/desafio-lccv?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/paulov59/desafio-lccv?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/github/issues/paulov59/desafio-lccv?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/paulov59/gestao-bens?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/paulov59/gestao-bens?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/paulov59/gestao-bens?style=for-the-badge)
+![Bitbucket open issues](https://img.shields.io/github/issues/paulov59/gestao-bens?style=for-the-badge)
 
 > Aplicação para gerenciamento, cadastro e manutenção de bens.
 
@@ -13,11 +13,11 @@ Para executar o Sistema de Gestão de Bens, siga estas etapas:
 
 Baixe o repositório :
 ```
-git clone https://github.com/paulov59/desafio-lccv.git
+git clone https://github.com/paulov59/gestao-bens.git
 ```
 Abra o diretorio do projeto:
 ```
-cd desafio-lccv
+cd gestao-bens
 ```
 
 Inicialize a aplicação:
